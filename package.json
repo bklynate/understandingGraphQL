@@ -1,0 +1,24 @@
+{
+  "name": "first-project-eco",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "dev": "json-server --watch db.json && nodemon server.js",
+    "json:server": "json-server --watch db.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.1",
+    "express-graphql": "^0.6.11",
+    "graphql": "^0.11.6",
+    "json-server": "^0.12.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1"
+  }
+}

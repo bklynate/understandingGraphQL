@@ -1,0 +1,125 @@
+{
+  "organizations": [
+    {
+      "id": "1",
+      "ogName": "Econify",
+      "createdAt": "1507426112533",
+      "updatedAt": null
+    },
+    {
+      "id": "2",
+      "ogName": "Google",
+      "createdAt": "1507426112533",
+      "updatedAt": null
+    },
+    {
+      "id": "3",
+      "ogName": "Apple",
+      "createdAt": "1507426112533",
+      "updatedAt": null
+    },
+    {
+      "id": "4",
+      "ogName": "United Nations",
+      "createdAt": "1507426112533",
+      "updatedAt": null
+    },
+    {
+      "id": "5",
+      "ogName": "Equinox",
+      "createdAt": "1507426112533",
+      "updatedAt": null
+    }
+  ],
+  "locations": [
+    {
+      "id": "7",
+      "name": "Place A",
+      "address": "4312 flatlands ave",
+      "latitude": "40.31527",
+      "longitude": "30.41327",
+      "createdAt": "1507426112533",
+      "updatedAt": null,
+      "organizationId": "1"
+    },
+    {
+      "id": "10",
+      "name": "Place A",
+      "address": "188 east 91 street",
+      "latitude": "22.31337",
+      "longitude": "77.41327",
+      "createdAt": "1507426112533",
+      "updatedAt": null,
+      "organizationId": "2"
+    },
+    {
+      "id": "9",
+      "name": "Place A",
+      "address": "902 drew street",
+      "latitude": "78.31447",
+      "longitude": "28.41327",
+      "createdAt": "1507426112533",
+      "updatedAt": null,
+      "organizationId": "2"
+    },
+    {
+      "id": "34",
+      "name": "Place A",
+      "address": "4312 flatlands ave",
+      "latitude": "42.31347",
+      "longitude": "44.41327",
+      "createdAt": "1507426112533",
+      "updatedAt": null,
+      "organizationId": "1"
+    },
+    {
+      "id": "H18QkGOhW",
+      "name": "Flody's",
+      "address": "Somewhere on Atlantic Ave",
+      "latitude": "14.54924",
+      "longitude": "25.12345"
+    }
+  ],
+  "Events": [
+    {
+      "id": "71",
+      "name": "Place D",
+      "address": "4312 flatlands ave",
+      "latitude": "40.31527",
+      "longitude": "30.41327",
+      "createdAt": "1507426112533",
+      "updatedAt": null,
+      "organizationId": "1"
+    },
+    {
+      "id": "11",
+      "name": "Place C",
+      "address": "4312 flatlands ave",
+      "latitude": "40.31527",
+      "longitude": "30.41327",
+      "createdAt": "1507426112533",
+      "updatedAt": null,
+      "organizationId": "2"
+    },
+    {
+      "id": "93",
+      "name": "Place A",
+      "address": "4312 flatlands ave",
+      "latitude": "40.31527",
+      "longitude": "30.41327",
+      "createdAt": "1507426112533",
+      "updatedAt": null,
+      "organizationId": "2"
+    },
+    {
+      "id": "43",
+      "name": "Place B",
+      "address": "4312 flatlands ave",
+      "latitude": "40.31527",
+      "longitude": "30.41327",
+      "createdAt": "1507426112533",
+      "updatedAt": null,
+      "organizationId": "1"
+    }
+  ]
+}
