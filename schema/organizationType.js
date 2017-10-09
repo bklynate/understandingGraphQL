@@ -1,5 +1,6 @@
 const graphql = require("graphql");
 const axios = require("axios");
+const { GraphQLDateTime } = require("graphql-iso-date");
 
 const {
   GraphQLObjectType,
@@ -12,16 +13,12 @@ const OrganizationType = new GraphQLObjectType({
     id: { type: GraphQLString },
     ogName: { type: GraphQLString },
     createdAt: {
-      type: GraphQLString,
-      resolve: () => {
-        return Date.now();
-      }
+      type: GraphQLString
+      // resolve: date => new Date().toISOString()
     },
     updatedAt: {
-      type: GraphQLString,
-      resolve: () => {
-        return Date.now();
-      }
+      type: GraphQLString
+      // resolve: date => new Date().toISOString()
     }
   })
 });

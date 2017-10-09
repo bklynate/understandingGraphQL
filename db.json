@@ -93,6 +93,27 @@
       "address": "Somewhere in Brooklyn",
       "latitude": "4.23542",
       "longitude": "5.434342"
+    },
+    {
+      "id": "H1IeqeK2W",
+      "name": "Dive Bar 7",
+      "address": "Somewhere in Brooklyn",
+      "latitude": "4.23542",
+      "longitude": "5.434342"
+    },
+    {
+      "id": "S1dVcxt2Z",
+      "name": "Dive Bar 6",
+      "address": "Somewhere in Brooklyn",
+      "latitude": "4.23542",
+      "longitude": "5.434342"
+    },
+    {
+      "id": "r1xHcxY2-",
+      "name": "The Dirty Rag",
+      "address": "Somewhere in Brooklyn",
+      "latitude": "4.242",
+      "longitude": "5.442"
     }
   ],
   "Events": [

@@ -1,5 +1,8 @@
 const graphql = require("graphql");
-const axios = require("axios");
+const mongoose = require("mongoose");
+const Location = mongoose.model("Location");
+const Organization = mongoose.model("Organization");
+const Event = mongoose.model("Event");
 const LocationType = require("./locationType");
 const OrganizationType = require("./organizationType");
 const EventType = require("./eventType");
@@ -7,9 +10,7 @@ const EventType = require("./eventType");
 const {
   GraphQLObjectType,
   GraphQLString,
-  GraphQLInt,
-  GraphQLList,
-  GraphQLNonNull
+  GraphQLList
 } = graphql;
 
 const RootQuery = new GraphQLObjectType({
@@ -21,9 +22,7 @@ const RootQuery = new GraphQLObjectType({
         id: { type: GraphQLString }
       },
       resolve(parentValue, { id }) {
-        return axios
-          .get(`http://localhost:3000/organizations/${id}`)
-          .then(response => response.data);
+        return Location.find(id);
       }
     },
     event: {
@@ -32,9 +31,7 @@ const RootQuery = new GraphQLObjectType({
         id: { type: GraphQLString }
       },
       resolve(parentValue, { id }) {
-        return axios
-          .get(`http://localhost:3000/events/${id}`)
-          .then(response => response.data);
+        return Event.findById(id);
       }
     },
     location: {
@@ -43,25 +40,25 @@ const RootQuery = new GraphQLObjectType({
         id: { type: GraphQLString }
       },
       resolve(parentValue, { id }) {
-        return axios
-          .get(`http://localhost:3000/locations/${id}`)
-          .then(response => response.data);
+        return Location.findById(id);
       }
     },
     locations: {
       type: new GraphQLList(LocationType),
       resolve() {
-        return axios
-          .get(`http://localhost:3000/locations`)
-          .then(response => response.data);
+        return Location.find({});
       }
     },
     organizations: {
       type: new GraphQLList(OrganizationType),
       resolve() {
-        return axios
-          .get(`http://localhost:3000/organizations`)
-          .then(response => response.data);
+        return Organization.find({});
+      }
+    },
+    events: {
+      type: new GraphQLList(EventType),
+      resolve() {
+        return Event.find({});
       }
     }
   }

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "dev": "json-server --watch db.json && nodemon server.js",
+    "dev-start": "json-server --watch db.json && nodemon server.js",
     "json:server": "json-server --watch db.json"
   },
   "author": "",
@@ -17,8 +17,10 @@
     "express": "^4.16.1",
     "express-graphql": "^0.6.11",
     "graphql": "^0.11.6",
+    "graphql-iso-date": "^3.3.0",
     "json-server": "^0.12.0",
     "lodash": "^4.17.4",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "mongoose": "^4.12.1"
   }
 }

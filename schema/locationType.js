@@ -1,8 +1,9 @@
 const graphql = require("graphql");
-const axios = require("axios");
+const mongoose = require("mongoose");
 const OrganizationType = require("./organizationType");
-
+const Organization = mongoose.model("Organization");
 const { GraphQLObjectType, GraphQLString, GraphQLNonNull } = graphql;
+const { GraphQLDateTime } = require("graphql-iso-date");
 
 const LocationType = new GraphQLObjectType({
   name: "Location",
@@ -13,25 +14,19 @@ const LocationType = new GraphQLObjectType({
     latitude: { type: GraphQLString },
     longitude: { type: GraphQLString },
     createdAt: {
-      type: GraphQLString,
-      resolve: () => {
-        return Date.now();
-      }
+      type: GraphQLString
     },
     updatedAt: {
       type: GraphQLString,
-      resolve: () => {
-        return Date.now();
+      resolve(location) {
+        console.log("Here is the location inside the location type: ", location);
+        return location.updatedAt;
       }
     },
     organization: {
-      type: new GraphQLNonNull(OrganizationType),
+      type: OrganizationType,
       resolve(parentValue, args) {
-        return axios
-          .get(
-            `http://localhost:3000/organizations/${parentValue.organizationId}`
-          )
-          .then(response => response.data);
+        return Organization.findById(parentValue.organizationId);
       }
     }
   })
