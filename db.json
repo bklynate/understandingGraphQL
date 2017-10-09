@@ -44,7 +44,7 @@
     },
     {
       "id": "10",
-      "name": "Place A",
+      "name": "Place B",
       "address": "188 east 91 street",
       "latitude": "22.31337",
       "longitude": "77.41327",
@@ -54,7 +54,7 @@
     },
     {
       "id": "9",
-      "name": "Place A",
+      "name": "Place C",
       "address": "902 drew street",
       "latitude": "78.31447",
       "longitude": "28.41327",
@@ -64,7 +64,7 @@
     },
     {
       "id": "34",
-      "name": "Place A",
+      "name": "Place D",
       "address": "4312 flatlands ave",
       "latitude": "42.31347",
       "longitude": "44.41327",
