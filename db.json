@@ -78,6 +78,21 @@
       "address": "Somewhere on Atlantic Ave",
       "latitude": "14.54924",
       "longitude": "25.12345"
+    },
+    {
+      "id": "BkLIdw_3b",
+      "name": "Dive Bar",
+      "address": "Somewhere in Brooklyn",
+      "latitude": "4.23542",
+      "longitude": "5.434342",
+      "createdAt": ""
+    },
+    {
+      "id": "ryy_jwuhW",
+      "name": "Dive Bar 2",
+      "address": "Somewhere in Brooklyn",
+      "latitude": "4.23542",
+      "longitude": "5.434342"
     }
   ],
   "Events": [
