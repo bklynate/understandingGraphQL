@@ -21,7 +21,7 @@ const RootQuery = new GraphQLObjectType({
       args: {
         id: { type: GraphQLString }
       },
-      resolve(parentValue, { id }) {
+      resolve(_, { id }) {
         return Location.find(id);
       }
     },
@@ -30,7 +30,7 @@ const RootQuery = new GraphQLObjectType({
       args: {
         id: { type: GraphQLString }
       },
-      resolve(parentValue, { id }) {
+      resolve(_, { id }) {
         return Event.findById(id);
       }
     },
@@ -39,7 +39,7 @@ const RootQuery = new GraphQLObjectType({
       args: {
         id: { type: GraphQLString }
       },
-      resolve(parentValue, { id }) {
+      resolve(_, { id }) {
         return Location.findById(id);
       }
     },

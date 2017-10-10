@@ -1,8 +1,5 @@
 const graphql = require("graphql");
-const axios = require("axios");
-
-const { GraphQLObjectType, GraphQLString, GraphQLNonNull } = graphql;
-const { GraphQLDateTime } = require("graphql-iso-date");
+const { GraphQLObjectType, GraphQLString } = graphql;
 
 const OrganizationType = require("./organizationType");
 
@@ -11,20 +8,14 @@ const EventType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLString },
     name: { type: GraphQLString },
-    datetime: {
-      type: GraphQLString
-    },
+    datetime: { type: GraphQLString },
     description: { type: GraphQLString },
-    createdAt: {
-      type: GraphQLString
-    },
-    updatedAt: {
-      type: GraphQLString
-    },
+    createdAt: { type: GraphQLString },
+    updatedAt: { type: GraphQLString },
     organization: {
       type: OrganizationType,
-      resolve(parentValue, args) {
-        return Organization.findById(parentValue.organizationId)
+      resolve(parentValue, _) {
+        return Organization.findById(parentValue.organizationId);
       }
     }
   })

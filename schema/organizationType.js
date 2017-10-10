@@ -1,26 +1,15 @@
 const graphql = require("graphql");
-const axios = require("axios");
-const { GraphQLDateTime } = require("graphql-iso-date");
-
-const {
-  GraphQLObjectType,
-  GraphQLString
-} = graphql;
+const { GraphQLObjectType, GraphQLString } = graphql;
 
 const OrganizationType = new GraphQLObjectType({
   name: "Organization",
   fields: () => ({
     id: { type: GraphQLString },
     ogName: { type: GraphQLString },
-    createdAt: {
-      type: GraphQLString
-      // resolve: date => new Date().toISOString()
-    },
-    updatedAt: {
-      type: GraphQLString
-      // resolve: date => new Date().toISOString()
-    }
+    createdAt: { type: GraphQLString },
+    updatedAt: { type: GraphQLString }
   })
 });
-
-module.exports = OrganizationType
+// Keeping this here as a reference:
+// resolve: date => new Date().toISOString()
+module.exports = OrganizationType;

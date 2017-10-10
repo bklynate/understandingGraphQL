@@ -1,12 +1,10 @@
 const graphql = require("graphql");
-const axios = require("axios");
 const mongoose = require("mongoose");
 const LocationType = require("./locationType");
 const OrganizationType = require("./organizationType");
 const Location = mongoose.model("Location");
 const Organization = mongoose.model("Organization");
 const { GraphQLObjectType, GraphQLString, GraphQLNonNull } = graphql;
-const { GraphQLDateTime } = require("graphql-iso-date");
 
 const mutation = new GraphQLObjectType({
   name: "Mutation",
@@ -19,11 +17,8 @@ const mutation = new GraphQLObjectType({
         createdAt: { type: GraphQLString },
         updatedAt: { type: GraphQLString }
       },
-      resolve(
-        parentValue,
-        { id, ogName, createdAt, updatedAt}
-      ) {
-        return (new Organization({ id, ogName, createdAt, updatedAt })).save();
+      resolve(_, args) {
+        return new Organization({ ...args }).save();
       }
     },
     addLocation: {
@@ -36,11 +31,8 @@ const mutation = new GraphQLObjectType({
         longitude: { type: GraphQLString },
         organizationId: { type: new GraphQLNonNull(GraphQLString) }
       },
-      resolve(
-        parentValue,
-        { id, name, address, latitude, longitude, createdAt, organizationId }
-      ) {
-        return (new Location({ id, name, address, latitude, longitude, createdAt, organizationId })).save();
+      resolve(_, args) {
+        return new Location({...args }).save();
       }
     },
     editLocation: {
@@ -57,7 +49,7 @@ const mutation = new GraphQLObjectType({
         }
       },
       async resolve(_, args) {
-        await Location.findByIdAndUpdate(args.id, {...args });
+        await Location.findByIdAndUpdate(args.id, { ...args });
         return Location.findById(args.id);
       }
     }

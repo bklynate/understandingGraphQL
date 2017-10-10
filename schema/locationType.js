@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const OrganizationType = require("./organizationType");
 const Organization = mongoose.model("Organization");
 const { GraphQLObjectType, GraphQLString, GraphQLNonNull } = graphql;
-const { GraphQLDateTime } = require("graphql-iso-date");
 
 const LocationType = new GraphQLObjectType({
   name: "Location",
@@ -13,19 +12,16 @@ const LocationType = new GraphQLObjectType({
     address: { type: GraphQLString },
     latitude: { type: GraphQLString },
     longitude: { type: GraphQLString },
-    createdAt: {
-      type: GraphQLString
-    },
+    createdAt: { type: GraphQLString },
     updatedAt: {
       type: GraphQLString,
       resolve(location) {
-        console.log("Here is the location inside the location type: ", location);
         return location.updatedAt;
       }
     },
     organization: {
       type: OrganizationType,
-      resolve(parentValue, args) {
+      resolve(parentValue, _) {
         return Organization.findById(parentValue.organizationId);
       }
     }
